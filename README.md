@@ -1,54 +1,40 @@
 # nexcore-lex-primitiva
 
-The foundational symbolic system for the NexVigilant platform. This crate provides the irreducible **16 Lex Primitiva** symbols, the **80 Bedrock Atoms**, and the formal grounding to mathematical constants and foundations.
+Part of the [NexVigilant](https://nexvigilant.com) pharmacovigilance platform.
 
-## Intent
-To provide a universal vocabulary for grounded computation. Every high-tier type in the NexCore workspace ultimately decomposes into the symbols defined in this crate, enabling verifiable cross-domain reasoning.
+## About NexVigilant
 
-## The 16 Lex Primitiva Symbols
-| Symbol | Name | Tier | Root? |
-| :--- | :--- | :---: | :---: |
-| **σ** | Sequence | T1 | No |
-| **μ** | Mapping | T1 | No |
-| **ς** | State | T1 | No |
-| **ρ** | Recursion | T1 | No |
-| **∅** | Void | T1 | No |
-| **∂** | Boundary | T1 | No |
-| **f** | Frequency | T1 | No |
-| **∃** | Existence | T1 | No |
-| **π** | Persistence | T1 | No |
-| **→** | Causality | T1 | **Yes** |
-| **κ** | Comparison | T1 | No |
-| **N** | Quantity | T1 | **Yes** |
-| **λ** | Location | T1 | No |
-| **∝** | Proportion | T1 | No |
-| **Σ** | Sum | T1 | No |
-| **×** | Product | T1 | **Axiomatic** |
+NexVigilant makes pharmacovigilance accessible. We build open computation tools for drug safety signal detection, causality assessment, and regulatory intelligence — because patient safety knowledge should be available to everyone willing to learn.
 
-## Core Components
-- **DependencyGraph**: Traces primitives back to their mathematical roots (Peano, Category Theory).
-- **CompositionAlgebra**: Logic for combining T1 primitives into higher-tier types.
-- **MolecularWeight**: Shannon information-theoretic mass of a grounded concept.
-- **TransferCalculator**: Predicts the confidence of transferring logic across domains.
+**Live tools:** [mcp.nexvigilant.com](https://mcp.nexvigilant.com) — 193 MCP tools for AI-powered pharmacovigilance, free to connect.
 
-## SOPs for Use
-### Implementing GroundsTo
-```rust
-use nexcore_lex_primitiva::prelude::*;
+## Installation
 
-impl GroundsTo for MyType {
-    fn primitive_composition() -> PrimitiveComposition {
-        PrimitiveComposition::new(vec![LexPrimitiva::State, LexPrimitiva::Boundary])
-            .with_dominant(LexPrimitiva::State, 0.8)
-    }
-}
+```toml
+[dependencies]
+nexcore-lex-primitiva = { git = "https://github.com/nexvigilant/nexcore-lex-primitiva" }
 ```
 
-### Tracing a Primitive
-```rust
-let traces = DependencyGraph::trace(LexPrimitiva::Void);
-// Traces back to the Root Constant 0
-```
+> **Note:** This crate was developed as part of the [nexcore](https://github.com/nexvigilant) workspace. Some dependencies may reference workspace-level configuration. See individual `Cargo.toml` for details.
 
 ## License
-Proprietary. Copyright (c) 2026 NexVigilant LLC. All Rights Reserved.
+
+**Personal, non-commercial use only.** See [LICENSE](LICENSE) for full terms.
+
+Organizations of any kind must have explicit written permission for use.
+Contact [matthew@nexvigilant.com](mailto:matthew@nexvigilant.com) for licensing.
+
+## Contributing
+
+Contributions are welcome under the following terms:
+
+1. **Fork & PR.** Fork this repository, make your changes, and submit a pull request.
+2. **CLA.** By submitting a pull request, you agree that your contributions become the property of NexVigilant LLC under the same license terms.
+3. **Code quality.** All Rust code must pass `cargo clippy -- -D warnings` and `cargo fmt --check`.
+4. **Tests.** New functionality should include tests. Run `cargo test --lib` before submitting.
+
+For questions or discussion, open an issue or reach out at [matthew@nexvigilant.com](mailto:matthew@nexvigilant.com).
+
+---
+
+Built by [NexVigilant LLC](https://nexvigilant.com) — Pharmacovigilance for NexVigilants.
